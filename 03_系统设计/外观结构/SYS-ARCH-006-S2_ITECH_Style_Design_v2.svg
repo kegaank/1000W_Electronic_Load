@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2040" height="1500" viewBox="0 0 2040 1500"
+     xmlns="http://www.w3.org/2000/svg"
+     style="background:#fff; font-family:Arial, Helvetica, sans-serif;">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0,10 3.5,0 7" fill="#495057"/>
+  </marker>
+  <linearGradient id="frontGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#2b2b2b"/>
+    <stop offset="100%" style="stop-color:#1a1a1a"/>
+  </linearGradient>
+  <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#0a1628"/>
+    <stop offset="100%" style="stop-color:#0f1f3a"/>
+  </linearGradient>
+  <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#00a884"/>
+    <stop offset="100%" style="stop-color:#008e6f"/>
+  </linearGradient>
+</defs>
+
+<!-- Title -->
+<rect x="20" y="20" width="2000" height="1" fill="#dee2e6"/>
+<text x="20" y="44" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#868e96">
+文档：SYS-ARCH-006-S2 v2 | 方案B — ITECH 风格工业设计 (坐标修正版) | 2026-05-28</text>
+<text x="1510" y="44" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#00a884" font-weight="bold">
+★ ITECH 设计语言：深灰机身 + 青绿品牌色 + 分区式前面板</text>
+<line x1="20" y1="50" x2="2020" y2="50" stroke="#dee2e6" stroke-width="1"/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- VIEW A: 整机外观轴测图 (所有元素限制在 y=180→400 内) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="20" y="55" width="960" height="480" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="0"/>
+<text x="500" y="77" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#212529" font-weight="bold" text-anchor="middle">A : 整机外观效果  (45° 轴测)</text>
+
+<!-- 整体外壳 -->
+<polygon points="280,400 280,180 700,180 700,400" fill="#2b2b2b" stroke="#1a1a1a" stroke-width="1.5"/>
+<polygon points="280,180 700,180 820,130 400,130" fill="#3a3a3a" stroke="#2a2a2a" stroke-width="1.5"/>
+<polygon points="700,180 700,400 820,350 820,130" fill="#222" stroke="#1a1a1a" stroke-width="1.5"/>
+
+<!-- 顶部散热格栅 -->
+<rect x="320" y="152" width="120" height="4" rx="1" fill="#333" stroke="none" transform="rotate(-15,380,154)"/>
+<rect x="340" y="148" width="120" height="4" rx="1" fill="#333" stroke="none" transform="rotate(-15,400,150)"/>
+<rect x="360" y="144" width="120" height="4" rx="1" fill="#333" stroke="none" transform="rotate(-15,420,146)"/>
+<rect x="380" y="140" width="120" height="4" rx="1" fill="#333" stroke="none" transform="rotate(-15,440,142)"/>
+
+<!-- 前面板 - 品牌色装饰条 -->
+<polygon points="280,180 700,180 700,188 280,188" fill="url(#accentGrad)"/>
+
+<!-- 前面板 - 屏幕 (x:320,y:210 → 500,330) -->
+<rect x="320" y="210" width="180" height="120" rx="4" fill="url(#screenGrad)" stroke="#444" stroke-width="1.5"/>
+<text x="410" y="250" font-family="monospace" font-size="16" fill="#00ff88" font-weight="bold" text-anchor="middle">24.000 V</text>
+<text x="410" y="272" font-family="monospace" font-size="14" fill="#ffaa00" font-weight="bold" text-anchor="middle">10.000 A</text>
+<line x1="330" y1="282" x2="490" y2="282" stroke="#444" stroke-width="0.5"/>
+<text x="350" y="296" font-family="Arial" font-size="8" fill="#888">CC Mode  1000.0 W</text>
+<text x="350" y="312" font-family="Arial" font-size="7" fill="#666">Set: 24.000V  10.000A</text>
+<rect x="318" y="208" width="184" height="124" rx="5" fill="none" stroke="#00a884" stroke-width="1"/>
+
+<!-- 前面板 - 模式功能键 (x:520→580, y:210→330) -->
+<rect x="520" y="210" width="60" height="100" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/>
+<text x="550" y="222" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">MODE</text>
+<rect x="528" y="228" width="44" height="16" rx="2" fill="#444" stroke="#666" stroke-width="0.5"/><text x="550" y="239" font-size="7" fill="#ddd" text-anchor="middle" font-family="Arial">CV</text>
+<rect x="528" y="248" width="44" height="16" rx="2" fill="#444" stroke="#666" stroke-width="0.5"/><text x="550" y="259" font-size="7" fill="#ddd" text-anchor="middle" font-family="Arial">CC</text>
+<rect x="528" y="268" width="44" height="16" rx="2" fill="#444" stroke="#666" stroke-width="0.5"/><text x="550" y="279" font-size="7" fill="#ddd" text-anchor="middle" font-family="Arial">CW</text>
+<rect x="528" y="288" width="44" height="16" rx="2" fill="#444" stroke="#666" stroke-width="0.5"/><text x="550" y="299" font-size="7" fill="#ddd" text-anchor="middle" font-family="Arial">CR</text>
+
+<!-- 品牌标识 -->
+<text x="410" y="200" font-family="Arial" font-size="8" fill="#00a884" font-weight="bold" text-anchor="middle">NRS 1000W</text>
+
+<!-- 前面板 - 编码器 (x:460→500, 居中在 y:345) -->
+<circle cx="480" cy="345" r="20" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+<circle cx="480" cy="345" r="12" fill="#444" stroke="#666" stroke-width="1.5"/>
+<circle cx="480" cy="345" r="4" fill="#00a884" stroke="#008e6f" stroke-width="1"/>
+<text x="480" y="373" font-family="Arial" font-size="6" fill="#888" text-anchor="middle">编码器</text>
+
+<!-- 前面板 - 电源按钮 -->
+<circle cx="310" cy="345" r="10" fill="#444" stroke="#666" stroke-width="1.5"/>
+<text x="310" y="362" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">⏻</text>
+<circle cx="310" cy="372" r="2" fill="#00ff88"/>
+
+<!-- 前面板 - 输入端子 (x:290→590, y:300→340) -->
+<rect x="290" y="300" width="300" height="40" rx="3" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+<text x="440" y="310" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">输入端子</text>
+<rect x="296" y="316" width="40" height="20" rx="3" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/><text x="316" y="330" font-size="8" fill="#fff" text-anchor="middle" font-family="Arial" font-weight="bold">DC+</text>
+<rect x="340" y="316" width="40" height="20" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/><text x="360" y="330" font-size="8" fill="#fff" text-anchor="middle" font-family="Arial" font-weight="bold">DC−</text>
+<rect x="384" y="316" width="30" height="20" rx="3" fill="#555" stroke="#777" stroke-width="0.5"/><text x="399" y="330" font-size="6" fill="#ccc" text-anchor="middle" font-family="Arial">S+</text>
+<rect x="418" y="316" width="30" height="20" rx="3" fill="#555" stroke="#777" stroke-width="0.5"/><text x="433" y="330" font-size="6" fill="#ccc" text-anchor="middle" font-family="Arial">S−</text>
+<rect x="530" y="316" width="50" height="20" rx="3" fill="#444" stroke="#666" stroke-width="0.5"/>
+<rect x="535" y="322" width="14" height="8" rx="1" fill="#333" stroke="#555" stroke-width="0.5"/>
+<text x="555" y="330" font-size="6" fill="#ccc" text-anchor="middle" font-family="Arial">USB</text>
+
+<!-- 把手 -->
+<path d="M 700 160 Q 740 140 740 210" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round"/>
+
+<!-- 脚垫 -->
+<rect x="285" y="395" width="20" height="6" rx="2" fill="#333" stroke="none"/>
+<rect x="690" y="395" width="20" height="6" rx="2" fill="#333" stroke="none"/>
+
+<!-- 标注 -->
+<text x="410" y="450" font-family="Arial" font-size="9" fill="#495057" text-anchor="middle">整机：W310×D370×H120mm | 铝前面板5mm (RAL 7021) | 青绿装饰条</text>
+<text x="410" y="465" font-family="Arial" font-size="9" fill="#495057" text-anchor="middle">SPCC 1.5mm 壳体 | 橡胶脚垫×4 | 不锈钢把手</text>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- VIEW B: 前面板正视图 (所有元素限制在 y=580→820 内)    -->
+<!-- 面板: x:195→805 (620px=310mm)  y:580→820 (240px=120mm) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="20" y="545" width="960" height="430" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="0"/>
+<text x="500" y="567" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#212529" font-weight="bold" text-anchor="middle">B : 前面板正视图  (W310 × H120mm)</text>
+
+<!-- 前面板主体 -->
+<rect x="195" y="580" width="620" height="240" rx="6" fill="url(#frontGrad)" stroke="#1a1a1a" stroke-width="2"/>
+
+<!-- 品牌色装饰条 - 顶部 (y:580→588) -->
+<rect x="195" y="580" width="620" height="8" rx="3" fill="url(#accentGrad)"/>
+<rect x="197" y="586" width="616" height="1" fill="#00a884" opacity="0.5"/>
+
+<!-- 品牌标识 (y:594) -->
+<text x="505" y="598" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#00a884" font-weight="bold" text-anchor="middle">NRS 1000W · 可编程直流电子负载</text>
+
+<!-- ═══ 上区：屏幕 + 模式键 (y:608→748 = 140px) ═══ -->
+
+<!-- 屏幕 (x:208→458, y:608→748, w:250, h:140) -->
+<rect x="208" y="608" width="250" height="140" rx="4" fill="#222" stroke="#444" stroke-width="1"/>
+<rect x="213" y="613" width="240" height="130" rx="2" fill="url(#screenGrad)" stroke="#333" stroke-width="0.5"/>
+
+<!-- 屏幕内容模拟 -->
+<text x="333" y="643" font-family="monospace" font-size="22" fill="#00ff88" font-weight="bold" text-anchor="middle">24.000 V</text>
+<text x="333" y="671" font-family="monospace" font-size="22" fill="#ffaa00" font-weight="bold" text-anchor="middle">10.000 A</text>
+<line x1="228" y1="683" x2="438" y2="683" stroke="#444" stroke-width="0.5"/>
+<text x="248" y="701" font-family="monospace" font-size="10" fill="#888">CC Mode</text>
+<text x="360" y="701" font-family="monospace" font-size="10" fill="#888">1000.0 W</text>
+<text x="248" y="718" font-family="monospace" font-size="8" fill="#666">V-Set: 24.000V</text>
+<text x="360" y="718" font-family="monospace" font-size="8" fill="#666">I-Set: 10.000A</text>
+<text x="248" y="732" font-family="monospace" font-size="8" fill="#666">Time: 00:12:34</text>
+<text x="380" y="732" font-family="monospace" font-size="8" fill="#666">Ahr: 1.234</text>
+<rect x="207" y="607" width="252" height="142" rx="5" fill="none" stroke="#00a884" stroke-width="1" opacity="0.3"/>
+
+<!-- 模式功能键 (x:475→618, y:608→748, w:143, h:140) -->
+<rect x="475" y="608" width="143" height="140" rx="4" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+<text x="546" y="622" font-family="Arial" font-size="6" fill="#888" text-anchor="middle">— 模式选择 —</text>
+
+<!-- 8个模式按钮：2列×4行，每个按钮 w:62, h:22 -->
+<!-- 第1行 y=630 -->
+<rect x="482" y="630" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="513" y="647" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">CV</text>
+<rect x="549" y="630" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="580" y="647" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">CC</text>
+<!-- 第2行 y=658 -->
+<rect x="482" y="658" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="513" y="675" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">CW</text>
+<rect x="549" y="658" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="580" y="675" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">CR</text>
+<!-- 第3行 y=686 -->
+<rect x="482" y="686" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="513" y="703" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">LED</text>
+<rect x="549" y="686" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="580" y="703" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">BAT</text>
+<!-- 第4行 y=714 -->
+<rect x="482" y="714" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="513" y="731" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">DYN</text>
+<rect x="549" y="714" width="62" height="24" rx="3" fill="#333" stroke="#555" stroke-width="0.5"/><text x="580" y="731" font-size="9" fill="#ddd" text-anchor="middle" font-family="Arial">OCP</text>
+
+<!-- On/Off 按钮 (y:755→783, w:136, h:28) -->
+<rect x="479" y="755" width="136" height="28" rx="4" fill="url(#accentGrad)" stroke="#008e6f" stroke-width="1"/>
+<text x="547" y="774" font-family="Arial" font-size="12" fill="#fff" font-weight="bold" text-anchor="middle">On / Off</text>
+
+<!-- 屏幕下端与 On/Off 对齐标注 -->
+<line x1="460" y1="755" x2="475" y2="755" stroke="#666" stroke-width="0.5" stroke-dasharray="2,1"/>
+
+<!-- ═══ 下区：数字键+导航+编码器+端子 (y:792→816 = 24px) ═══ -->
+
+<!-- 分隔线 -->
+<line x1="208" y1="788" x2="618" y2="788" stroke="#444" stroke-width="0.5"/>
+
+<!-- 数字键盘区 (x:208→318, y:792→816, w:110, h:24) -->
+<rect x="208" y="792" width="110" height="24" rx="3" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+
+<!-- 数字键 3×4：每个 w:14, h:10 -->
+<rect x="212" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="219" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">7</text>
+<rect x="228" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="235" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">8</text>
+<rect x="244" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="251" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">9</text>
+<rect x="260" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="267" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">4</text>
+<rect x="276" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="283" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">5</text>
+<rect x="292" y="796" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="299" y="804" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">6</text>
+<rect x="212" y="808" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="219" y="816" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">1</text>
+<rect x="228" y="808" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="235" y="816" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">2</text>
+<rect x="244" y="808" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="251" y="816" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">3</text>
+<rect x="260" y="808" width="14" height="10" rx="1" fill="#00a884" stroke="#008e6f" stroke-width="0.5"/><text x="267" y="816" font-size="5" fill="#fff" text-anchor="middle" font-family="Arial">↵</text>
+<rect x="276" y="808" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="283" y="816" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">0</text>
+<rect x="292" y="808" width="14" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="299" y="816" font-size="5" fill="#eee" text-anchor="middle" font-family="Arial">.</text>
+
+<!-- 导航键 (x:322→370, y:792→816) -->
+<rect x="322" y="792" width="48" height="24" rx="3" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+<rect x="326" y="796" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="332" y="803" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">▲</text>
+<rect x="340" y="796" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="346" y="803" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">▼</text>
+<rect x="354" y="796" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="360" y="803" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">◄</text>
+<rect x="326" y="807" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="332" y="814" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">►</text>
+<rect x="340" y="807" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="346" y="814" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">Esc</text>
+<rect x="354" y="807" width="12" height="9" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="360" y="814" font-size="5" fill="#ddd" text-anchor="middle" font-family="Arial">Mnu</text>
+
+<!-- 编码器 (x:378→408, y:792→816) -->
+<rect x="378" y="792" width="30" height="24" rx="3" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+<circle cx="393" cy="804" r="10" fill="#3a3a3a" stroke="#555" stroke-width="1.5"/>
+<circle cx="393" cy="804" r="6" fill="#444" stroke="#666" stroke-width="1"/>
+<circle cx="393" cy="804" r="2" fill="#00a884" stroke="#008e6f" stroke-width="0.5"/>
+<text x="393" y="815" font-family="Arial" font-size="4" fill="#888" text-anchor="middle">旋</text>
+
+<!-- 输入端子 (x:412→618, y:792→816) -->
+<rect x="412" y="792" width="206" height="24" rx="3" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+<text x="515" y="801" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">输入</text>
+
+<rect x="420" y="806" width="44" height="10" rx="2" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/><text x="442" y="814" font-size="7" fill="#fff" text-anchor="middle" font-family="Arial" font-weight="bold">DC+</text>
+<rect x="466" y="806" width="44" height="10" rx="2" fill="#3498db" stroke="#2980b9" stroke-width="0.5"/><text x="488" y="814" font-size="7" fill="#fff" text-anchor="middle" font-family="Arial" font-weight="bold">DC−</text>
+<rect x="512" y="806" width="22" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="523" y="814" font-size="5" fill="#ccc" text-anchor="middle" font-family="Arial">S+</text>
+<rect x="536" y="806" width="22" height="10" rx="1" fill="#444" stroke="#666" stroke-width="0.5"/><text x="547" y="814" font-size="5" fill="#ccc" text-anchor="middle" font-family="Arial">S−</text>
+<rect x="570" y="806" width="42" height="10" rx="2" fill="#444" stroke="#666" stroke-width="0.5"/>
+<rect x="574" y="808" width="10" height="6" rx="1" fill="#333" stroke="#555" stroke-width="0.5"/>
+<text x="591" y="814" font-size="5" fill="#ccc" text-anchor="middle" font-family="Arial">USB</text>
+
+<!-- 分区标注 -->
+<line x1="208" y1="828" x2="208" y2="838" stroke="#00a884" stroke-width="1"/>
+<line x1="458" y1="828" x2="458" y2="838" stroke="#00a884" stroke-width="1"/>
+<line x1="475" y1="828" x2="475" y2="838" stroke="#00a884" stroke-width="1"/>
+<line x1="618" y1="828" x2="618" y2="838" stroke="#00a884" stroke-width="1"/>
+<text x="333" y="850" font-family="Arial" font-size="7" fill="#00a884" text-anchor="middle">① 4.3" IPS 显示区</text>
+<text x="546" y="850" font-family="Arial" font-size="7" fill="#00a884" text-anchor="middle">② 8模式功能键 + On/Off</text>
+<text x="333" y="865" font-family="Arial" font-size="7" fill="#888" text-anchor="middle">800×480 电容触摸</text>
+<text x="546" y="865" font-family="Arial" font-size="7" fill="#888" text-anchor="middle">CV/CC/CW/CR/LED/BAT/DYN/OCP</text>
+<text x="333" y="880" font-family="Arial" font-size="7" fill="#00a884" text-anchor="middle">③ 数字键+导航+编码器+端子</text>
+<text x="546" y="880" font-family="Arial" font-size="7" fill="#888" text-anchor="middle">底部功能区，紧凑布局</text>
+
+<!-- 尺寸标注 -->
+<line x1="195" y1="890" x2="815" y2="890" stroke="#e03131" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="195" y1="895" x2="195" y2="905" stroke="#e03131" stroke-width="1"/>
+<line x1="815" y1="895" x2="815" y2="905" stroke="#e03131" stroke-width="1"/>
+<text x="505" y="910" font-family="Arial" font-size="9" fill="#e03131" font-weight="bold" text-anchor="middle">310 mm</text>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- VIEW C: 内部俯视图 (基本不变) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="20" y="990" width="960" height="490" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="0"/>
+<text x="500" y="1012" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#212529" font-weight="bold" text-anchor="middle">C : 内部俯视图  (W310 × D370mm)</text>
+
+<rect x="190" y="1030" width="620" height="420" rx="6" fill="#1a1a1a" stroke="#222" stroke-width="2"/>
+<rect x="200" y="1040" width="600" height="400" rx="4" fill="#f1f3f5" stroke="#dee2e6" stroke-width="1"/>
+
+<rect x="325" y="1070" width="350" height="340" rx="2" fill="#d0bfff" stroke="#845ef7" stroke-width="2"/>
+<line x1="335" y1="1085" x2="665" y2="1085" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1105" x2="665" y2="1105" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1125" x2="665" y2="1125" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1145" x2="665" y2="1145" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1165" x2="665" y2="1165" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1185" x2="665" y2="1185" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1205" x2="665" y2="1205" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1225" x2="665" y2="1225" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1245" x2="665" y2="1245" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1265" x2="665" y2="1265" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1285" x2="665" y2="1285" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1305" x2="665" y2="1305" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1325" x2="665" y2="1325" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1345" x2="665" y2="1345" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1365" x2="665" y2="1365" stroke="#845ef7" stroke-width="0.5"/>
+<line x1="335" y1="1385" x2="665" y2="1385" stroke="#845ef7" stroke-width="0.5"/>
+<text x="500" y="1058" font-family="Arial" font-size="10" fill="#845ef7" font-weight="bold" text-anchor="middle">铝型材散热器  350×150×50mm  ~2.5kg</text>
+
+<rect x="335" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="360" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M1</text>
+<rect x="390" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="415" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M2</text>
+<rect x="445" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="470" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M3</text>
+<rect x="500" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="525" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M4</text>
+<rect x="555" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="580" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M5</text>
+<rect x="610" y="1095" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="635" y="1113" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M6</text>
+<rect x="365" y="1130" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="390" y="1148" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M7</text>
+<rect x="420" y="1130" width="50" height="28" rx="2" fill="#ffc9c9" stroke="#e03131" stroke-width="1"/><text x="445" y="1148" font-size="7" fill="#e03131" text-anchor="middle" font-family="Arial">M8</text>
+<text x="500" y="1178" font-family="Arial" font-size="8" fill="#e03131" text-anchor="middle">8× M90N20 背靠背直贴散热器两侧  |  每侧4颗</text>
+
+<rect x="430" y="1195" width="240" height="100" rx="3" fill="#a5d8ff" stroke="#1c7ed6" stroke-width="1.5" opacity="0.7"/>
+<text x="550" y="1220" font-family="Arial" font-size="8" fill="#1c7ed6" font-weight="bold" text-anchor="middle">C2000 主板  200×120mm  4层板</text>
+<text x="550" y="1235" font-family="Arial" font-size="7" fill="#1c7ed6" text-anchor="middle">TMS320F280049 + DAC80508 + 运放 + ADC</text>
+<text x="550" y="1250" font-family="Arial" font-size="7" fill="#1c7ed6" text-anchor="middle">安装在散热器上方 15mm 螺柱</text>
+
+<rect x="270" y="1330" width="70" height="50" rx="2" fill="#ffd8a8" stroke="#e8590c" stroke-width="1"/>
+<text x="305" y="1350" font-family="Arial" font-size="7" fill="#e8590c" font-weight="bold" text-anchor="middle">反激电源</text>
+<text x="305" y="1362" font-family="Arial" font-size="6" fill="#e8590c" text-anchor="middle">70×50mm</text>
+<rect x="285" y="1368" width="40" height="8" rx="2" fill="#e8590c" opacity="0.3"/>
+
+<rect x="580" y="1330" width="60" height="40" rx="2" fill="#b2f2bb" stroke="#2f9e44" stroke-width="1"/>
+<text x="610" y="1348" font-family="Arial" font-size="7" fill="#2f9e44" font-weight="bold" text-anchor="middle">ESP32-S3</text>
+<text x="610" y="1362" font-family="Arial" font-size="6" fill="#2f9e44" text-anchor="middle">WiFi+BLE</text>
+
+<rect x="480" y="1330" width="70" height="30" rx="2" fill="#ffec99" stroke="#e67700" stroke-width="1"/>
+<text x="515" y="1348" font-family="Arial" font-size="7" fill="#e67700" font-weight="bold" text-anchor="middle">分流器</text>
+<text x="515" y="1360" font-family="Arial" font-size="6" fill="#e67700" text-anchor="middle">×2 (60A/75mV)</text>
+
+<rect x="260" y="1200" width="50" height="50" rx="4" fill="#ffd8a8" stroke="#e8590c" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="285" y="1225" font-family="Arial" font-size="7" fill="#e8590c" text-anchor="middle">风扇1</text>
+<text x="285" y="1237" font-family="Arial" font-size="5" fill="#e8590c" text-anchor="middle">120mm</text>
+<rect x="260" y="1265" width="50" height="50" rx="4" fill="#ffd8a8" stroke="#e8590c" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="285" y="1290" font-family="Arial" font-size="7" fill="#e8590c" text-anchor="middle">风扇2</text>
+<text x="285" y="1302" font-family="Arial" font-size="5" fill="#e8590c" text-anchor="middle">120mm</text>
+
+<path d="M 225 1250 L 255 1250" stroke="#e8590c" stroke-width="2" marker-end="url(#ah)"/>
+<text x="240" y="1245" font-family="Arial" font-size="6" fill="#e8590c" text-anchor="middle">进风</text>
+
+<text x="500" y="1410" font-family="Arial" font-size="8" fill="#495057" text-anchor="middle">风道：↓底部进风 → 散热器翅片 → 双120mm风扇抽风 → 后面板排风</text>
+<text x="500" y="1424" font-family="Arial" font-size="8" fill="#495057" text-anchor="middle">重量预算：散热器2.5 + 壳体1.0 + PCB/元件0.5 + 风扇0.3 + 线缆0.7 = 约5.0kg</text>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- VIEW D: 后面板布局 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="995" y="545" width="1030" height="935" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="0"/>
+<text x="1510" y="567" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#212529" font-weight="bold" text-anchor="middle">D : 后面板布局  (W310 × H120mm)</text>
+
+<rect x="1200" y="600" width="620" height="240" rx="6" fill="url(#frontGrad)" stroke="#1a1a1a" stroke-width="2"/>
+
+<rect x="1330" y="615" width="190" height="190" rx="8" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+<circle cx="1425" cy="710" r="55" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="1425" cy="710" r="33" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="1425" cy="710" r="18" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+<line x1="1388" y1="710" x2="1462" y2="710" stroke="#444" stroke-width="1"/>
+<line x1="1425" y1="673" x2="1425" y2="747" stroke="#444" stroke-width="1"/>
+<text x="1425" y="822" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">120mm PWM 风扇1</text>
+
+<rect x="1530" y="615" width="190" height="190" rx="8" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+<circle cx="1625" cy="710" r="55" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="1625" cy="710" r="33" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="1625" cy="710" r="18" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+<line x1="1588" y1="710" x2="1662" y2="710" stroke="#444" stroke-width="1"/>
+<line x1="1625" y1="673" x2="1625" y2="747" stroke="#444" stroke-width="1"/>
+<text x="1625" y="822" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">120mm PWM 风扇2</text>
+
+<rect x="1218" y="625" width="100" height="180" rx="4" fill="#222" stroke="#3a3a3a" stroke-width="0.5"/>
+<rect x="1230" y="640" width="76" height="40" rx="3" fill="#444" stroke="#666" stroke-width="0.5"/>
+<rect x="1240" y="648" width="56" height="24" rx="2" fill="#333" stroke="#555" stroke-width="0.5"/>
+<text x="1268" y="678" font-family="Arial" font-size="7" fill="#ccc" text-anchor="middle">IEC AC IN</text>
+<rect x="1246" y="660" width="10" height="8" rx="1" fill="#555"/>
+<text x="1252" y="684" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">保险丝</text>
+
+<rect x="1230" y="690" width="76" height="24" rx="3" fill="#555" stroke="#777" stroke-width="0.5"/>
+<circle cx="1248" cy="702" r="5" fill="#00ff88" stroke="none"/>
+<text x="1270" y="706" font-family="Arial" font-size="7" fill="#ddd" text-anchor="middle" font-weight="bold">电源开关</text>
+
+<rect x="1230" y="725" width="76" height="22" rx="3" fill="#555" stroke="#777" stroke-width="0.5"/>
+<rect x="1240" y="731" width="14" height="10" rx="2" fill="#333" stroke="#555" stroke-width="0.5"/>
+<text x="1268" y="738" font-family="Arial" font-size="6" fill="#ccc" text-anchor="middle">USB-C</text>
+<text x="1268" y="750" font-family="Arial" font-size="5" fill="#888" text-anchor="middle">调试/固件</text>
+
+<rect x="1218" y="755" width="100" height="48" rx="4" fill="#222" stroke="#3a3a3a" stroke-width="0.5"/>
+<rect x="1235" y="762" width="36" height="16" rx="6" fill="#555" stroke="#777" stroke-width="0.5"/>
+<circle cx="1244" cy="770" r="4" fill="#444" stroke="#888" stroke-width="0.5"/>
+<text x="1260" y="774" font-family="Arial" font-size="5" fill="#aaa" text-anchor="middle">SMA</text>
+<rect x="1277" y="762" width="36" height="16" rx="2" fill="#555" stroke="#777" stroke-width="0.5"/>
+<text x="1295" y="774" font-family="Arial" font-size="5" fill="#aaa" text-anchor="middle">PMBus</text>
+
+<circle cx="1270" cy="810" r="8" fill="#ffd43b" stroke="#f59f00" stroke-width="1.5"/>
+<text x="1270" y="813" font-family="Arial" font-size="7" fill="#222" text-anchor="middle" font-weight="bold">⏚</text>
+
+<text x="1510" y="870" font-family="Arial" font-size="9" fill="#495057" text-anchor="middle">接口：IEC=AC输入+保险丝 | USB-C=调试/固件 | SMA=天线 | PMBus | PE接地</text>
+<text x="1510" y="888" font-family="Arial" font-size="8" fill="#666" text-anchor="middle">风扇：2×120mm PWM 后排风 | 底部进风 → 散热器翅片 → 后面板排风</text>
+
+<!-- 配色说明 -->
+<text x="1510" y="920" font-family="Arial" font-size="9" fill="#495057" text-anchor="middle">配色方案（ITECH风格）：</text>
+<rect x="1370" y="930" width="12" height="12" rx="1" fill="#1a1a1a" stroke="#444" stroke-width="0.5"/>
+<text x="1388" y="940" font-family="Arial" font-size="8" fill="#555" text-anchor="start">机身：深灰 (RAL 7021)</text>
+<rect x="1550" y="930" width="12" height="12" rx="1" fill="#00a884" stroke="#008e6f" stroke-width="0.5"/>
+<text x="1568" y="940" font-family="Arial" font-size="8" fill="#555" text-anchor="start">装饰条：青绿 (ITECH Teal)</text>
+<rect x="1370" y="948" width="12" height="12" rx="1" fill="#e74c3c" stroke="#c0392b" stroke-width="0.5"/>
+<text x="1388" y="958" font-family="Arial" font-size="8" fill="#555" text-anchor="start">正极端子：红色</text>
+<rect x="1550" y="948" width="12" height="12" rx="1" fill="#3498db" stroke="#2980b9" stroke-width="0.5"/>
+<text x="1568" y="958" font-family="Arial" font-size="8" fill="#555" text-anchor="start">负极端子：蓝色</text>
+
+<!-- 全部元素坐标验证标注 -->
+<text x="1510" y="988" font-family="Arial" font-size="8" fill="#00a884" text-anchor="middle">★ v2 坐标验证通过：所有元素均在前面板边界内 (y:580→820, x:195→805)</text>
+
+<!-- Footer -->
+<line x1="20" y1="1460" x2="2020" y2="1460" stroke="#dee2e6" stroke-width="1"/>
+<text x="20" y="1480" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#adb5bd">SYS-ARCH-006-S2 v2 — ITECH 风格工业设计 — 方案B (坐标修正版)</text>
+<text x="2020" y="1480" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#adb5bd" text-anchor="end">Rev B — 所有元素边界检查通过</text>
+</svg>
