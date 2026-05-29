@@ -1,0 +1,448 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" style="background:#0d1117; font-family:'Segoe UI','Noto Sans SC',Arial,sans-serif">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrow-power" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f85149"/>
+    </marker>
+    <marker id="arrow-control" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrow-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrow-safety" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d29922"/>
+    </marker>
+    <!-- Gradients -->
+    <linearGradient id="grd-power" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d0014"/>
+      <stop offset="100%" stop-color="#1a000a"/>
+    </linearGradient>
+    <linearGradient id="grd-control" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#002b3d"/>
+      <stop offset="100%" stop-color="#001520"/>
+    </linearGradient>
+    <linearGradient id="grd-comm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#003d1a"/>
+      <stop offset="100%" stop-color="#001a0a"/>
+    </linearGradient>
+    <linearGradient id="grd-psu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d1a00"/>
+      <stop offset="100%" stop-color="#1a0e00"/>
+    </linearGradient>
+    <linearGradient id="grd-safety" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d2d00"/>
+      <stop offset="100%" stop-color="#1a1a00"/>
+    </linearGradient>
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-blue">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="box-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background grid -->
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M30 0 L0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1400" height="1050" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="700" y="38" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="bold">EL-1000 系统框图 — System Block Diagram</text>
+  <text x="700" y="58" text-anchor="middle" fill="#8b949e" font-size="12">文档: SYS-ARCH-000 v1.0 | 1000W 可编程直流电子负载 | 150V/60A/1000W | C2000 + ESP32-S3</text>
+
+  <!-- ============================================ -->
+  <!-- DOMAIN: Power Supply (最上层) -->
+  <!-- ============================================ -->
+  <rect x="25" y="75" width="1350" height="175" rx="10" fill="url(#grd-psu)" stroke="#d29922" stroke-width="1.5" stroke-dasharray="6,3" filter="url(#box-shadow)"/>
+  <text x="38" y="95" fill="#d29922" font-size="13" font-weight="bold">⚡ 辅助电源树 — Power Supply Tree</text>
+
+  <!-- AC Input -->
+  <rect x="55" y="110" width="90" height="55" rx="6" fill="#2d1a00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="100" y="133" text-anchor="middle" fill="#d29922" font-size="11" font-weight="bold">AC 输入</text>
+  <text x="100" y="148" text-anchor="middle" fill="#d29922" font-size="9">220V~50Hz</text>
+
+  <line x1="145" y1="137" x2="175" y2="137" stroke="#d29922" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- EMI + Rectifier -->
+  <rect x="180" y="110" width="100" height="55" rx="6" fill="#2d1a00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="230" y="133" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">EMI滤波</text>
+  <text x="230" y="148" text-anchor="middle" fill="#d29922" font-size="9">+整流</text>
+
+  <line x1="280" y1="137" x2="310" y2="137" stroke="#d29922" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- 310V DC Bus -->
+  <rect x="315" y="110" width="90" height="55" rx="6" fill="#3d1a00" stroke="#d29922" stroke-width="2"/>
+  <text x="360" y="133" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">310V DC</text>
+  <text x="360" y="148" text-anchor="middle" fill="#d29922" font-size="9">总线电容</text>
+
+  <line x1="405" y1="137" x2="435" y2="137" stroke="#d29922" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- Flyback -->
+  <rect x="440" y="105" width="110" height="65" rx="6" fill="#2d1a00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="495" y="126" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">反激变换器</text>
+  <text x="495" y="140" text-anchor="middle" fill="#8b949e" font-size="8">C2000数字直驱</text>
+  <text x="495" y="154" text-anchor="middle" fill="#d29922" font-size="9">48V/3A | 隔离</text>
+
+  <!-- Isolation dashed line in flyback -->
+  <line x1="440" y1="133" x2="440" y2="165" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="435" y="170" text-anchor="end" fill="#8b949e" font-size="7">隔离栅</text>
+
+  <!-- 48V line splits into 3 Buck + charge pump -->
+  <line x1="550" y1="137" x2="590" y2="137" stroke="#d29922" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- 48V node -->
+  <circle cx="590" cy="137" r="4" fill="#f0883e" stroke="#d29922" stroke-width="1"/>
+
+  <!-- Buck1: +15V -->
+  <rect x="600" y="100" width="85" height="45" rx="5" fill="#2d1a00" stroke="#d29922" stroke-width="1"/>
+  <text x="642" y="119" text-anchor="middle" fill="#d29922" font-size="10">Buck1</text>
+  <text x="642" y="134" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">+15V/1A</text>
+
+  <!-- Buck2: +12V -->
+  <rect x="600" y="150" width="85" height="45" rx="5" fill="#2d1a00" stroke="#d29922" stroke-width="1"/>
+  <text x="642" y="169" text-anchor="middle" fill="#d29922" font-size="10">Buck2</text>
+  <text x="642" y="184" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">+12V/2A</text>
+
+  <!-- Buck3: +5V -->
+  <rect x="600" y="200" width="85" height="45" rx="5" fill="#2d1a00" stroke="#d29922" stroke-width="1"/>
+  <text x="642" y="219" text-anchor="middle" fill="#d29922" font-size="10">Buck3</text>
+  <text x="642" y="234" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">+5V/3A</text>
+
+  <!-- 48V → Buck1/2/3 lines -->
+  <line x1="590" y1="137" x2="590" y2="122" stroke="#d29922" stroke-width="1.5"/>
+  <line x1="590" y1="122" x2="600" y2="122" stroke="#d29922" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+  <line x1="590" y1="137" x2="590" y2="172" stroke="#d29922" stroke-width="1.5"/>
+  <line x1="590" y1="172" x2="600" y2="172" stroke="#d29922" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+  <line x1="590" y1="137" x2="590" y2="222" stroke="#d29922" stroke-width="1.5"/>
+  <line x1="590" y1="222" x2="600" y2="222" stroke="#d29922" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+
+  <!-- Charge Pump -->
+  <rect x="720" y="100" width="85" height="45" rx="5" fill="#2d1a00" stroke="#d29922" stroke-width="1"/>
+  <text x="762" y="119" text-anchor="middle" fill="#d29922" font-size="9">电荷泵</text>
+  <text x="762" y="134" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">-15V/0.3A</text>
+  <line x1="685" y1="122" x2="720" y2="122" stroke="#d29922" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+
+  <!-- LDO from +5V -->
+  <rect x="720" y="150" width="85" height="45" rx="5" fill="#2d1a00" stroke="#d29922" stroke-width="1"/>
+  <text x="762" y="169" text-anchor="middle" fill="#d29922" font-size="9">LDO</text>
+  <text x="762" y="184" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">+3.3V/1A</text>
+  <line x1="685" y1="222" x2="720" y2="172" stroke="#d29922" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+
+  <!-- Rail usage labels -->
+  <text x="830" y="116" fill="#8b949e" font-size="8">→ 运放 OPA548</text>
+  <text x="830" y="165" fill="#8b949e" font-size="8">→ 风扇×2, 继电器</text>
+  <text x="830" y="204" fill="#8b949e" font-size="8">→ C2000, ESP32-S3, ADS1115</text>
+  <text x="830" y="224" fill="#8b949e" font-size="8">→ LCD屏幕(3.3V)</text>
+
+  <!-- Power BOM summary -->
+  <rect x="950" y="100" width="200" height="95" rx="6" fill="#1a0e00" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="1050" y="118" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">电源 BOM 汇总</text>
+  <text x="960" y="136" fill="#8b949e" font-size="9">反激子板: ~¥45</text>
+  <text x="960" y="150" fill="#8b949e" font-size="9">Buck: ¥25 | LDO: ¥3</text>
+  <text x="960" y="164" fill="#8b949e" font-size="9">EMI+整流: ¥30</text>
+  <text x="960" y="180" fill="#f0883e" font-size="10" font-weight="bold">合计: ~¥120</text>
+
+  <rect x="950" y="200" width="200" height="45" rx="6" fill="#1a0e00" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="1050" y="218" text-anchor="middle" fill="#d29922" font-size="10">隔离方案</text>
+  <text x="1050" y="234" text-anchor="middle" fill="#8b949e" font-size="9">ISO7741 | ACS712 | ADuM3160</text>
+
+  <!-- ============================================ -->
+  <!-- DOMAIN: Power Stage (主功率级) -->
+  <!-- ============================================ -->
+  <rect x="25" y="265" width="1350" height="230" rx="10" fill="url(#grd-power)" stroke="#f85149" stroke-width="1.5" filter="url(#box-shadow)"/>
+  <text x="38" y="285" fill="#f85149" font-size="13" font-weight="bold">⚡ 主功率级 — Power Stage</text>
+
+  <!-- DUT input -->
+  <rect x="55" y="315" width="90" height="60" rx="8" fill="#3d0014" stroke="#f85149" stroke-width="2"/>
+  <text x="100" y="340" text-anchor="middle" fill="#f85149" font-size="11" font-weight="bold">DUT</text>
+  <text x="100" y="355" text-anchor="middle" fill="#f85149" font-size="9">被测设备</text>
+  <text x="100" y="368" text-anchor="middle" fill="#8b949e" font-size="8">0~150V / 0~60A</text>
+
+  <!-- Input terminals -->
+  <rect x="175" y="315" width="80" height="60" rx="6" fill="#2a0010" stroke="#f85149" stroke-width="1.5"/>
+  <text x="215" y="340" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">输入端子</text>
+  <text x="215" y="358" text-anchor="middle" fill="#8b949e" font-size="8">DC+ / DC−</text>
+  <text x="215" y="370" text-anchor="middle" fill="#8b949e" font-size="8">S+ / S− (Kelvin)</text>
+
+  <line x1="145" y1="345" x2="175" y2="345" stroke="#f85149" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- Safety: Relay + Fuse -->
+  <rect x="285" y="315" width="80" height="60" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="325" y="340" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">继电器</text>
+  <text x="325" y="355" text-anchor="middle" fill="#d29922" font-size="9">HF165FD</text>
+  <text x="325" y="368" text-anchor="middle" fill="#8b949e" font-size="8">100A / 12V</text>
+
+  <rect x="395" y="315" width="70" height="60" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="430" y="340" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">熔丝</text>
+  <text x="430" y="355" text-anchor="middle" fill="#d29922" font-size="9">125A</text>
+  <text x="430" y="368" text-anchor="middle" fill="#8b949e" font-size="8">快断型</text>
+
+  <line x1="255" y1="345" x2="285" y2="345" stroke="#f85149" stroke-width="2" marker-end="url(#arrow-power)"/>
+  <line x1="365" y1="345" x2="395" y2="345" stroke="#d29922" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- 12×M90N20 linear array (revised from 8) -->
+  <rect x="495" y="305" width="170" height="80" rx="8" fill="#3d0014" stroke="#f85149" stroke-width="2"/>
+  <text x="580" y="325" text-anchor="middle" fill="#f85149" font-size="12" font-weight="bold">12×M90N20</text>
+  <text x="580" y="342" text-anchor="middle" fill="#f85149" font-size="9">线性MOSFET阵列</text>
+  <text x="580" y="358" text-anchor="middle" fill="#8b949e" font-size="8">TO-247 | AlN陶瓷垫</text>
+  <text x="580" y="372" text-anchor="middle" fill="#8b949e" font-size="8">原型10管 / 量产12管</text>
+
+  <line x1="465" y1="345" x2="495" y2="345" stroke="#f85149" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- Gate driver (linear mode) -->
+  <rect x="495" y="400" width="170" height="55" rx="6" fill="#2a0010" stroke="#f85149" stroke-width="1.5"/>
+  <text x="580" y="420" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">OPA548 ×2</text>
+  <text x="580" y="436" text-anchor="middle" fill="#8b949e" font-size="9">功率运放线性驱动</text>
+  <text x="580" y="448" text-anchor="middle" fill="#8b949e" font-size="8">DAC80508 → OPA548 → Gate</text>
+
+  <!-- Gate driver → MOSFETs connection -->
+  <line x1="580" y1="400" x2="580" y2="385" stroke="#f85149" stroke-width="1.5" marker-end="url(#arrow-power)"/>
+  <text x="565" y="394" text-anchor="end" fill="#8b949e" font-size="7">Gate</text>
+
+  <!-- Current sensing shunts -->
+  <rect x="700" y="315" width="110" height="60" rx="6" fill="#2a0010" stroke="#f85149" stroke-width="1.5"/>
+  <text x="755" y="340" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">检流电阻</text>
+  <text x="755" y="355" text-anchor="middle" fill="#8b949e" font-size="9">0.05Ω/5W ×12</text>
+  <text x="755" y="368" text-anchor="middle" fill="#8b949e" font-size="8">±1% 分流器</text>
+
+  <line x1="665" y1="345" x2="700" y2="345" stroke="#f85149" stroke-width="2" marker-end="url(#arrow-power)"/>
+
+  <!-- Output to DUT return -->
+  <line x1="810" y1="345" x2="850" y2="345" stroke="#f85149" stroke-width="2" marker-end="url(#arrow-power)"/>
+  <rect x="855" y="315" width="70" height="60" rx="8" fill="#3d0014" stroke="#f85149" stroke-width="1.5"/>
+  <text x="890" y="338" text-anchor="middle" fill="#f85149" font-size="9">功率</text>
+  <text x="890" y="352" text-anchor="middle" fill="#f85149" font-size="9">地回路</text>
+
+  <!-- Power flow annotation -->
+  <path d="M100,385 L100,400 L325,400 L325,385" fill="none" stroke="#f85149" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-power)"/>
+  <text x="210" y="410" text-anchor="middle" fill="#f85149" font-size="9">功率路径: DUT → 端子 → 继电器 → 熔丝 → MOSFET阵列 → 检流 → GND</text>
+  <text x="210" y="425" text-anchor="middle" fill="#8b949e" font-size="8">额定: 150V/60A/1000W | 峰值: 1500W (≤5min)</text>
+
+  <!-- Heat sink annotation -->
+  <rect x="970" y="305" width="190" height="110" rx="6" fill="#1a000a" stroke="#f85149" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="1065" y="323" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">散热系统</text>
+  <text x="980" y="342" fill="#8b949e" font-size="9">铝型材 350×150×50mm</text>
+  <text x="980" y="358" fill="#8b949e" font-size="9">双120mm PWM风扇</text>
+  <text x="980" y="374" fill="#8b949e" font-size="9">NTC测温×4 (3散热器+1环境)</text>
+  <text x="980" y="390" fill="#8b949e" font-size="9">θSA目标 0.06°C/W</text>
+  <text x="980" y="406" fill="#8b949e" font-size="9">满载Tsink≈85°C</text>
+
+  <rect x="1180" y="305" width="170" height="110" rx="6" fill="#1a000a" stroke="#f85149" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="1265" y="323" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">功率级 BOM</text>
+  <text x="1190" y="342" fill="#8b949e" font-size="9">M90N20×12: ¥120</text>
+  <text x="1190" y="358" fill="#8b949e" font-size="9">AlN陶瓷垫×12: ¥36</text>
+  <text x="1190" y="374" fill="#8b949e" font-size="9">OPA548×2: ¥8</text>
+  <text x="1190" y="390" fill="#8b949e" font-size="9">DAC80508+ADS1115: ¥26</text>
+  <text x="1190" y="406" fill="#f0883e" font-size="10" font-weight="bold">合计: ~¥300</text>
+
+  <!-- ============================================ -->
+  <!-- DOMAIN: Control (C2000 + ADC/DAC) -->
+  <!-- ============================================ -->
+  <rect x="25" y="510" width="900" height="230" rx="10" fill="url(#grd-control)" stroke="#58a6ff" stroke-width="1.5" filter="url(#box-shadow)"/>
+  <text x="38" y="530" fill="#58a6ff" font-size="13" font-weight="bold">🎛️ 控制与采样 — Control &amp; Sensing</text>
+
+  <!-- C2000 F28E12x -->
+  <rect x="50" y="555" width="180" height="95" rx="8" fill="#002b3d" stroke="#58a6ff" stroke-width="2"/>
+  <text x="140" y="575" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">C2000 F28E12x</text>
+  <text x="140" y="592" text-anchor="middle" fill="#58a6ff" font-size="9">48-pin 主控MCU</text>
+  <text x="140" y="608" text-anchor="middle" fill="#8b949e" font-size="8">HRPWM 7/8 | CMPSS 3/3</text>
+  <text x="140" y="622" text-anchor="middle" fill="#8b949e" font-size="8">ADC ~13ch | GPIO ~18</text>
+  <text x="140" y="640" text-anchor="middle" fill="#3fb950" font-size="8">FreeRTOS实时任务</text>
+
+  <!-- PWM → Isolation → Gate Driver -->
+  <rect x="55" y="680" width="120" height="42" rx="5" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="115" y="698" text-anchor="middle" fill="#3fb950" font-size="9">HRPWM 7ch</text>
+  <text x="115" y="712" text-anchor="middle" fill="#8b949e" font-size="8">→ ISO7721隔离</text>
+
+  <line x1="140" y1="650" x2="115" y2="680" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-control)"/>
+  <text x="105" y="668" text-anchor="end" fill="#58a6ff" font-size="7">PWM</text>
+
+  <!-- CMPSS protection -->
+  <rect x="270" y="680" width="130" height="42" rx="5" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="335" y="698" text-anchor="middle" fill="#d29922" font-size="9">CMPSS ×3</text>
+  <text x="335" y="712" text-anchor="middle" fill="#8b949e" font-size="8">OCP/OVP/OTP &lt;100ns</text>
+
+  <line x1="200" y1="640" x2="335" y2="680" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-control)"/>
+  <text x="270" y="662" text-anchor="middle" fill="#58a6ff" font-size="7">硬件比较器</text>
+
+  <!-- Internal ADC -->
+  <rect x="270" y="555" width="140" height="60" rx="5" fill="#002b3d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="340" y="575" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">内部ADC</text>
+  <text x="340" y="592" text-anchor="middle" fill="#8b949e" font-size="9">12-bit × ~13ch</text>
+  <text x="340" y="607" text-anchor="middle" fill="#8b949e" font-size="8">NTC×4 + 电压轨</text>
+
+  <line x1="230" y1="600" x2="270" y2="585" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-control)"/>
+  <text x="248" y="595" text-anchor="end" fill="#58a6ff" font-size="7">总线</text>
+
+  <!-- External ADS1115 -->
+  <rect x="450" y="555" width="140" height="60" rx="5" fill="#002b3d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="520" y="575" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">ADS1115</text>
+  <text x="520" y="592" text-anchor="middle" fill="#8b949e" font-size="9">16-bit ΔΣ ADC</text>
+  <text x="520" y="607" text-anchor="middle" fill="#8b949e" font-size="8">860SPS | I_total + V_in</text>
+
+  <line x1="410" y1="585" x2="450" y2="585" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-control)"/>
+  <text x="428" y="583" text-anchor="middle" fill="#58a6ff" font-size="7">SPI</text>
+
+  <!-- DAC path -->
+  <rect x="450" y="680" width="140" height="42" rx="5" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="520" y="698" text-anchor="middle" fill="#3fb950" font-size="9">DAC输出</text>
+  <text x="520" y="712" text-anchor="middle" fill="#8b949e" font-size="8">2.5A/μs斜率</text>
+
+  <line x1="200" y1="640" x2="520" y2="680" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-control)"/>
+  <text x="365" y="662" text-anchor="middle" fill="#58a6ff" font-size="7">PID→DAC</text>
+
+  <!-- Control loop annotation -->
+  <rect x="640" y="555" width="250" height="130" rx="6" fill="#001520" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="765" y="574" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">控制环路</text>
+  <text x="765" y="594" text-anchor="middle" fill="#8b949e" font-size="9">CC/CV/CP/CR 模式选择</text>
+  <text x="765" y="610" text-anchor="middle" fill="#8b949e" font-size="9">电压外环: 1kHz</text>
+  <text x="765" y="626" text-anchor="middle" fill="#8b949e" font-size="9">电流内环(PID): 860Hz</text>
+  <text x="765" y="642" text-anchor="middle" fill="#8b949e" font-size="9">模式切换: 50ms软切换</text>
+  <text x="765" y="660" text-anchor="middle" fill="#8b949e" font-size="9">保护任务: 1ms周期</text>
+
+  <!-- ADC precision annotation -->
+  <rect x="640" y="695" width="250" height="40" rx="6" fill="#001520" stroke="#58a6ff" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="765" y="714" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">精度目标: 16-bit → 0.1%±0.05%FS</text>
+
+  <!-- ============================================ -->
+  <!-- DOMAIN: Communication & UI (ESP32-S3) -->
+  <!-- ============================================ -->
+  <rect x="940" y="510" width="435" height="230" rx="10" fill="url(#grd-comm)" stroke="#3fb950" stroke-width="1.5" filter="url(#box-shadow)"/>
+  <text x="953" y="530" fill="#3fb950" font-size="13" font-weight="bold">📡 通信与UI — Communication &amp; User Interface</text>
+
+  <!-- ESP32-S3 -->
+  <rect x="960" y="555" width="170" height="80" rx="8" fill="#003d1a" stroke="#3fb950" stroke-width="2"/>
+  <text x="1045" y="575" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">ESP32-S3</text>
+  <text x="1045" y="592" text-anchor="middle" fill="#3fb950" font-size="9">通信协处理器</text>
+  <text x="1045" y="608" text-anchor="middle" fill="#8b949e" font-size="8">Wi-Fi 6 + BLE 5.0</text>
+  <text x="1045" y="622" text-anchor="middle" fill="#8b949e" font-size="8">环形缓冲 60分钟</text>
+
+  <!-- UART link between C2000 and ESP32 -->
+  <line x1="935" y1="595" x2="960" y2="595" stroke="#3fb950" stroke-width="2" marker-end="url(#arrow-signal)"/>
+  <text x="945" y="590" text-anchor="end" fill="#3fb950" font-size="8" font-weight="bold">UART</text>
+  <text x="945" y="608" text-anchor="end" fill="#8b949e" font-size="7">115200bps</text>
+  <text x="945" y="622" text-anchor="end" fill="#8b949e" font-size="7">自定义协议</text>
+
+  <!-- Web UI -->
+  <rect x="1160" y="555" width="140" height="55" rx="6" fill="#003d1a" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="1230" y="575" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">Web UI</text>
+  <text x="1230" y="592" text-anchor="middle" fill="#8b949e" font-size="8">WebSocket + REST API</text>
+  <text x="1230" y="605" text-anchor="middle" fill="#8b949e" font-size="8">实时仪表盘</text>
+
+  <line x1="1130" y1="580" x2="1160" y2="580" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow-signal)"/>
+
+  <!-- USB-C -->
+  <rect x="1160" y="620" width="140" height="40" rx="6" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="1230" y="640" text-anchor="middle" fill="#3fb950" font-size="9">USB-C</text>
+  <text x="1230" y="653" text-anchor="middle" fill="#8b949e" font-size="8">ADuM3160隔离</text>
+
+  <!-- OTA -->
+  <rect x="1160" y="670" width="140" height="40" rx="6" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="1230" y="690" text-anchor="middle" fill="#3fb950" font-size="9">OTA升级</text>
+  <text x="1230" y="703" text-anchor="middle" fill="#8b949e" font-size="8">ESP32→UART→C2000 IAP</text>
+
+  <!-- LCD Screen -->
+  <rect x="960" y="680" width="170" height="50" rx="6" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="1045" y="700" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">4.3" IPS LCD</text>
+  <text x="1045" y="716" text-anchor="middle" fill="#8b949e" font-size="9">800×480 | V/I/P/曲线</text>
+
+  <line x1="1045" y1="700" x2="1160" y2="700" stroke="#3fb950" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- ============================================ -->
+  <!-- DOMAIN: Safety (底部) -->
+  <!-- ============================================ -->
+  <rect x="25" y="755" width="1350" height="140" rx="10" fill="url(#grd-safety)" stroke="#d29922" stroke-width="1.5" filter="url(#box-shadow)"/>
+  <text x="38" y="775" fill="#d29922" font-size="13" font-weight="bold">🔒 安全架构 — Safety System</text>
+
+  <!-- 5-layer safety -->
+  <rect x="50" y="795" width="240" height="85" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="170" y="814" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">第1道: 物理安全</text>
+  <text x="60" y="832" fill="#8b949e" font-size="8">I类接地, &lt;0.1Ω</text>
+  <text x="60" y="848" fill="#8b949e" font-size="8">IP20, 接线柱间距≥19mm</text>
+  <text x="60" y="864" fill="#8b949e" font-size="8">高压区隔离挡板</text>
+
+  <rect x="310" y="795" width="240" height="85" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="430" y="814" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">第2道: 电气隔离</text>
+  <text x="320" y="832" fill="#8b949e" font-size="8">ISO7741: 控制↔功率</text>
+  <text x="320" y="848" fill="#8b949e" font-size="8">ACS712: 电流采样隔离</text>
+  <text x="320" y="864" fill="#8b949e" font-size="8">ADuM3160: USB隔离</text>
+
+  <rect x="570" y="795" width="240" height="85" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="690" y="814" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">第3道: 传感器监测</text>
+  <text x="580" y="832" fill="#8b949e" font-size="8">NTC×4: 散热器3点+环境</text>
+  <text x="580" y="848" fill="#8b949e" font-size="8">霍尔: 输入电流</text>
+  <text x="580" y="864" fill="#8b949e" font-size="8">电压检测: 电阻分压</text>
+
+  <rect x="830" y="795" width="240" height="85" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="950" y="814" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">第4道: 逻辑判断</text>
+  <text x="840" y="832" fill="#8b949e" font-size="8">固件: 1ms保护任务</text>
+  <text x="840" y="848" fill="#8b949e" font-size="8">HW比较器: &lt;2μs OCP</text>
+  <text x="840" y="864" fill="#8b949e" font-size="8">独立于MCU, 不经过固件</text>
+
+  <rect x="1090" y="795" width="260" height="85" rx="6" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="1220" y="814" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">第5道: 三重切断</text>
+  <text x="1100" y="832" fill="#8b949e" font-size="8">① FET栅极下拉 ≤15μs</text>
+  <text x="1100" y="848" fill="#8b949e" font-size="8">② 继电器断开 5-10ms</text>
+  <text x="1100" y="864" fill="#8b949e" font-size="8">③ 输入熔丝 125A 终级防线</text>
+
+  <!-- Watchdog -->
+  <rect x="830" y="730" width="240" height="50" rx="5" fill="#2d2d00" stroke="#d29922" stroke-width="1.5"/>
+  <text x="950" y="750" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">⏱ 看门狗 TPS3823</text>
+  <text x="950" y="766" text-anchor="middle" fill="#8b949e" font-size="8">1.6s超时 → 继电器断开 + 栅极拉低 + MCU复位</text>
+
+  <!-- ============================================ -->
+  <!-- LEGEND -->
+  <!-- ============================================ -->
+  <rect x="50" y="910" width="1300" height="120" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="70" y="932" fill="#e6edf3" font-size="12" font-weight="bold">图例</text>
+
+  <!-- Color legend items -->
+  <rect x="70" y="945" width="12" height="12" rx="2" fill="none" stroke="#f85149" stroke-width="2"/>
+  <text x="88" y="956" fill="#8b949e" font-size="9">主功率路径</text>
+
+  <rect x="200" y="945" width="12" height="12" rx="2" fill="none" stroke="#58a6ff" stroke-width="2"/>
+  <text x="218" y="956" fill="#8b949e" font-size="9">控制/采样信号</text>
+
+  <rect x="360" y="945" width="12" height="12" rx="2" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <text x="378" y="956" fill="#8b949e" font-size="9">通信/UI信号</text>
+
+  <rect x="520" y="945" width="12" height="12" rx="2" fill="none" stroke="#d29922" stroke-width="2"/>
+  <text x="538" y="956" fill="#8b949e" font-size="9">安全/保护</text>
+
+  <rect x="680" y="945" width="12" height="12" rx="2" fill="#3d0014" stroke="#f85149" stroke-width="1"/>
+  <text x="698" y="956" fill="#8b949e" font-size="9">功率域背景</text>
+
+  <rect x="820" y="945" width="12" height="12" rx="2" fill="#002b3d" stroke="#58a6ff" stroke-width="1"/>
+  <text x="838" y="956" fill="#8b949e" font-size="9">控制域背景</text>
+
+  <rect x="960" y="945" width="12" height="12" rx="2" fill="#003d1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="978" y="956" fill="#8b949e" font-size="9">通信域背景</text>
+
+  <rect x="1120" y="945" width="12" height="12" rx="2" fill="#2d2d00" stroke="#d29922" stroke-width="1"/>
+  <text x="1138" y="956" fill="#8b949e" font-size="9">安全域背景</text>
+
+  <text x="70" y="985" fill="#8b949e" font-size="9">产品: EL-1000 可编程直流电子负载 | 架构: 线性MOSFET并联 | 主控: C2000 F28E12x + ESP32-S3 | 安全: 5道防护+3重切断</text>
+  <text x="70" y="1002" fill="#8b949e" font-size="9">文档: SYS-ARCH-000 v1.0 | 基于 03_系统设计 各子模块终版文档 | 外部: √ Web UI + USB-C | OTA: ✓ | Wi-Fi/BLE: ✓</text>
+  <text x="70" y="1019" fill="#30363d" font-size="8">* 辅助电源域（橙框）为AC→DC隔离供电系统 | 功率组件BOM ~¥300 | 安全BOM增量 ~¥77.5 | 总电源BOM ~¥120</text>
+
+  <!-- Isolation barrier symbols between domains -->
+  <line x1="440" y1="137" x2="440" y2="165" stroke="#d29922" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="430" y="152" text-anchor="end" fill="#d29922" font-size="8">隔离栅</text>
+
+  <!-- Cross-domain connections -->
+  <!-- C2000 PWM → ISO7721 → Gate driver (through isolation boundary) -->
+  <line x1="175" y1="697" x2="250" y2="697" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="210" y="693" text-anchor="middle" fill="#8b949e" font-size="7">隔离</text>
+
+  <!-- Safety comparator outputs to C2000 -->
+  <line x1="400" y1="697" x2="450" y2="697" stroke="#d29922" stroke-width="1"/>
+  <text x="425" y="693" text-anchor="middle" fill="#d29922" font-size="7">故障</text>
+
+</svg>
