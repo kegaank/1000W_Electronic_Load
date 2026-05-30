@@ -1,0 +1,147 @@
+{
+  "board": {
+    "3dviewports": [],
+    "design_settings": {
+      "defaults": {
+        "board_outline_line_width": 0.1,
+        "copper_line_width": 0.2,
+        "copper_text_size_v": 1.5,
+        "copper_text_size_h": 1.5,
+        "courtyard_line_width": 0.05,
+        "diff_pair_gap": 0.5,
+        "diff_pair_width": 0.2,
+        "dimension_precision": 3,
+        "dimension_units": 3,
+        "fab_line_width": 0.1,
+        "keepout_line_width": 0.1,
+        "other_line_width": 0.1,
+        "pad_size": 1.524,
+        "pcb_text_size_v": 1.5,
+        "pcb_text_size_h": 1.5,
+        "silk_line_width": 0.1,
+        "silk_text_size_v": 1.0,
+        "silk_text_size_h": 1.0,
+        "solder_mask_margin": 0.0,
+        "solder_paste_margin": 0.0,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "zones_allow_external_fillets": false
+      },
+      "diff_pair_dimensions": [],
+      "drc_exclusions": [],
+      "meta": {
+        "version": 2
+      },
+      "rule_severities": {},
+      "rules": [],
+      "track_widths": [],
+      "via_dimensions": [],
+      "zones_allow_external_fillets": false
+    },
+    "layer_presets": [],
+    "viewports": []
+  },
+  "boards": [],
+  "cvpcb": {
+    "equivalence_files": []
+  },
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    },
+    "pin_map": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "rule_severities": {}
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "meta": {
+    "filename": "EL-1000_PowerStage.kicad_pro",
+    "version": 2
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.2,
+        "diff_pair_gap": 0.5,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 0.25
+      }
+    ],
+    "meta": {
+      "version": 3
+    },
+    "net_colors": null
+  },
+  "pcbnew": {
+    "last_paths": {
+      "gencad": "",
+      "idf": "",
+      "netlist": "",
+      "specctra_dsn": "",
+      "step": ""
+    },
+    "page_layout_descr_file": ""
+  },
+  "schematic": {
+    "annotate_start_num": 0,
+    "drawing": {
+      "default_line_width": 0.0,
+      "default_text_size": 1.27,
+      "intersheave_refs": false,
+      "intersheave_refs_own_page": false,
+      "page_layout_descr_file": "",
+      "plot_sheet_ref": false,
+      "subpart_id_separator": 46
+    },
+    "legacy_kludge": false,
+    "meta": {
+      "version": 1
+    },
+    "net_format_name": "",
+    "ngspice": {
+      "model_mode": 0,
+      "model_type": "",
+      "spice_command": "",
+      "workbook_filename": ""
+    },
+    "page_number_sorting": false,
+    "project": {
+      "cache_timestamp": 0,
+      "files": [],
+      "name": "EL-1000_PowerStage",
+      "sch": "EL-1000_PowerStage.kicad_sch"
+    },
+    "subpart_first_id": 65,
+    "text_var_visible": true
+  },
+  "sheet": {
+    "meta": {
+      "version": 1
+    },
+    "page_number_sorting": false,
+    "ssheet": {
+      "page_count": 1,
+      "page_numbers": []
+    }
+  }
+}
