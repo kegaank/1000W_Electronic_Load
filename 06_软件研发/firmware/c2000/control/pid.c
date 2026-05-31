@@ -16,8 +16,8 @@ void pid_init(pid_ctrl_t* pid)
     pid->dt        = 1.0f / 860.0f;   /* ~0.001163 s */
     pid->max_output  = 0.95f;
     pid->min_output  = 0.0f;
-    pid->max_integral = 0.5f;
-    pid->min_integral = -0.5f;
+    pid->max_integral = 0.95f;   /* 30A稳态duty~0.88, 需≥0.88 (per pid_sim.py) */
+    pid->min_integral = -0.95f;
 
     pid->integral       = 0.0f;
     pid->prev_error     = 0.0f;
