@@ -41,6 +41,10 @@ credentials.json
 *-backups/
 *.bak
 *.bck
+*.kicad_sch.lck
+
+# Generated BOM XML from KiCad
+*-bom.xml
 
 # Office temporary files
 ~$*
